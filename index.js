@@ -2,6 +2,17 @@
 import Vue from 'vue'
 import VueRouter from './src'
 import { configRouter } from './route-config'
+
+import $ from 'jquery'
+
+window.$ = $;
+
+//import channel from './services/channelControl'
+
+//channel.setChannel()
+
+//console.log("channel:" , channel);
+
 require('es6-promise').polyfill()
 
 // install router
@@ -12,7 +23,6 @@ const router = new VueRouter({
   history: true,
   saveScrollPosition: true
 })
-
 // configure router
 configRouter(router)
 

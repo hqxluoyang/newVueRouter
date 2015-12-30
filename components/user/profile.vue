@@ -7,10 +7,13 @@
 </template>
 
 <script>
-
+import $ from 'jquery'
+import channel from '../../services/wschannel.js'
 import Hcomp from './Hcomp.vue'
 	export default {
 		data () {
+
+			console.log("jquery:" , channel)
 			return {
 				msg :"hello world"
 			}

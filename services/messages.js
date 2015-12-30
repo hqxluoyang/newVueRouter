@@ -1,4 +1,5 @@
 // just a mock
+
 export default {
   get (params, cb) {
     setTimeout(() => {

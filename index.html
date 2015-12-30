@@ -10,11 +10,38 @@
     </style>
   </head>
   <body>
+    <script>
+      (function(){
+        window.services = {};
+        services.setBaseurl = function(baseurl){
+            this.baseurl = baseurl.charAt(baseurl.length - 1) === '/' ? baseurl : baseurl+'/';
+            //offline mode has a /web/ prefix
+            this.baseurl = this.baseurl.replace(/\/web\/$/,'/');
+            this.uploadurl = this.baseurl + 'upload'
+            this.respImageurl = this.baseurl + 'respImage'
+            this.webclienturl = this.baseurl + 'webclient'
+          }
+  
+          services.setChannelurl = function(channelurl){
+            if(channelurl.indexOf('http') == 0){
+              this.channelurl = channelurl;
+            }
+            else{
+              this.channelurl = this.baseurl + channelurl;
+            }
+          } 
+  
+          var baseurl = document.location.href.replace(/(http(s?):\/\/.*)\/[^/]*$/,'$1/')
+  
+          services.setBaseurl(baseurl)
+          console.log("services:" , services)
+      })()
+    </script>
 
     <div id="app"></div>
 
     <script src="http://localhost:8080/webpack-dev-server.js"></script>
-    <script src="/example.build.js"></script>
+    <script src="./example.build.js"></script>
 
   </body>
 </html>
