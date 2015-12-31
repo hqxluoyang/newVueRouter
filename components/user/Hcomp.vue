@@ -9,3 +9,14 @@
 <template>
   <div class="bg">hehehehe</div>
 </template>
+
+<script>
+
+export default {
+	initBus (bus){
+		alert("dfe")
+		//bus.on("channel" , function(){alert("999")})
+	}
+}
+
+</script>

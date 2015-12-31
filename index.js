@@ -2,8 +2,8 @@
 import Vue from 'vue'
 import VueRouter from './src'
 import { configRouter } from './route-config'
-
 import $ from 'jquery'
+import main from './services/main'
 
 window.$ = $;
 
@@ -32,3 +32,7 @@ router.start(App, '#app')
 
 // just for debugging
 window.router = router
+
+main.start();
+console.log("services.channelurl:" , services.channelurl , services)
+
