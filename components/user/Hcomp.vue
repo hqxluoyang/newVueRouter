@@ -14,7 +14,7 @@
 
 export default {
 	initBus (bus){
-		alert("dfe")
+		
 		//bus.on("channel" , function(){alert("999")})
 	}
 }
