@@ -4,7 +4,7 @@ import VueRouter from './src'
 import { configRouter } from './route-config'
 import $ from 'jquery'
 import main from './services/main'
-
+import Material from 'vue-material'; 
 window.$ = $;
 
 //import channel from './services/channelControl'
@@ -32,7 +32,8 @@ router.start(App, '#app')
 
 // just for debugging
 window.router = router
-
+Material.regAll(Vue);
+//Material.reg(Vue , ['buttons' , 'cards'])
 main.start();
 console.log("services.channelurl:" , services.channelurl , services)
 

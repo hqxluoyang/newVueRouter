@@ -4,11 +4,25 @@ export function configRouter (router) {
 //  console.log("router:" , router)
   router.map({
     // basic example
-    '/about': {
+    '/image': {
       // the component can also be a plain string component id,
       // but a component with that id must be available in the
       // App component's scope.
-      component: require('./components/about.vue')
+      component: require('./components/image/index.vue')
+    },
+
+    '/apk': {
+      // the component can also be a plain string component id,
+      // but a component with that id must be available in the
+      // App component's scope.
+      component: require('./components/apk/index.vue')
+    },
+
+    '/music': {
+      // the component can also be a plain string component id,
+      // but a component with that id must be available in the
+      // App component's scope.
+      component: require('./components/music/index.vue')
     },
 
     // nested example

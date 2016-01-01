@@ -14,9 +14,9 @@
 <template>
   <div class='topLink'>
       <a v-link="{ path: '/inbox/message/123' }">首页</a>
-      <a v-link="{ path: '/about' }">照片</a>
-      <a v-link="{ path: '/user' }">音乐</a>
-      <a v-link="{ path: '/forbidden' }">应用</a>
+      <a v-link="{ path: '/image' }">照片</a>
+      <a v-link="{ path: '/music' }">音乐</a>
+      <a v-link="{ path: '/apk' }">应用</a>
     <router-view class="view" transition="test" transition-mode="out-in" keep-alive></router-view>
   </div>
 </template>
