@@ -21,7 +21,11 @@
 //import tools from '../../services/tools'
 export default {
 	init () { 
-		alert("music init")
+		
+	},
+
+	ready () {
+		alert("music ready")
 	}
 }
 

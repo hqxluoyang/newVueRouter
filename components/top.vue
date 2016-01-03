@@ -12,14 +12,20 @@
 
 <template>
   <div class='top'>
+  	<titlecom></titlecom>
   	<link></link>
   </div>
 </template>
 
 <script>
 import link from './link.vue'
+import titlecom from './title.vue'
 export default {
+
+   ready () {
+   	
+   },
   
-  components:{link}
+  components:{link , titlecom}
 }
 </script>
