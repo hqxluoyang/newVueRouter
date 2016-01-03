@@ -12,7 +12,7 @@ export default {
 		eventBus.on("channel" , function(){})
 
 		setTimeout(function(){
-			eventBus.emit("startImage")
+			//eventBus.emit("startImage")
 		} , 3000)
 		Config.Runtime.eventBus = eventBus;
 	}

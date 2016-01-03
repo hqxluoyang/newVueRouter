@@ -30,10 +30,18 @@ configRouter(router)
 const App = Vue.extend(require('./app.vue'))
 router.start(App, '#app')
 
+
+
 // just for debugging
 window.router = router
 Material.regAll(Vue);
 //Material.reg(Vue , ['buttons' , 'cards'])
 main.start();
+
+router.afterEach((transition)=>{
+	console.log("after router:", transition.to.path)
+
+//	if(transition.to.path=='/image'){}
+})
 console.log("services.channelurl:" , services.channelurl , services)
 

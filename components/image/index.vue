@@ -9,9 +9,10 @@
 
 <template>
   <div class='imageContainer' v-bind:style="{height:h + 'px'}">
-   <p v-on:click = "great()">{{msg}}</p>
-   <p>{{time}}</p>
-   <p>{{hi}}</p>
+  <p v-for="obj in item">
+    <span>{{obj.message}}</span>
+  </p>
+  <p>{{time}}</p>
    <test></test>
   </div>
 </template>
@@ -19,6 +20,7 @@
 <script>
 
 import tools from  '../../services/tools.js'
+import initBus from '../../services/image/initBus.js'
 import test from './test.vue'
 
 export default {
@@ -29,6 +31,7 @@ export default {
          h: 450,
          time:10,
          msg:"left",
+         item:[{message:'taodhuilang'},{message:'taodhuilang'},{message:'taodhuilang'},{message:'taodhuilang'},{message:'taodhuilang'},{message:'taodhuilang'},{message:'taodhuilang'}],
          hi:"k"
       }
    },
@@ -39,17 +42,8 @@ export default {
       }
   },
 
-   setPageSize () {
-      const h = tools.getPageHeight();
-      const w = tools.getPageWidth();
-      this.h = h - 110
-      console.log("setPageSize:" , this , this.h)
-   },
-
    init () {
-
      console.log("init this:" , this)
-     
    },
 
     getThis (el) {
@@ -66,29 +60,14 @@ export default {
    },
 
    ready () {
-      console.log("start component")
-      tools.el = this;
-       console.log("image self:" , tools.el)
-      this.$options.getThis(this);
-     
-   },
-
-   image () {
-    if(!tools.el) return 
-
-    setInterval(()=>{
-      tools.el.time ++
-    } , 2000)
-    tools.el.msg = "tao tao tao tao"
-     console.log("image getThis:" , tools.el , this)
+      initBus.setThis.call(initBus, this);
    },
 
    initBus (bus) {
-     
-      bus.on("startImage" , this.image.bind(this))
+      initBus.regBus(bus);
    },
 
-     components:{test}
+   components:{test}
 
    
 }

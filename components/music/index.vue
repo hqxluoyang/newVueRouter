@@ -19,13 +19,21 @@
 
 <script>
 //import tools from '../../services/tools'
+import Config from '../../services/config'
 export default {
 	init () { 
 		
 	},
 
 	ready () {
-		alert("music ready")
+
+		
+		const bus = Config.Runtime.eventBus;
+		console.log("bus:" , Config)
+		setTimeout(function(){
+		//	bus.emit("startImage")
+		} , 1000)
+		
 	}
 }
 
